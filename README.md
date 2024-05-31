@@ -64,5 +64,4 @@ The Budget Calculator is a simple React web application that allows users to man
     - The required monthly income is calculated and displayed below the expense list.
     - The calculation ensures rent does not exceed 33% of the monthly income.
 
-## Project Structure
 
