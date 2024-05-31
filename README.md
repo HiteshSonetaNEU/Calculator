@@ -29,8 +29,8 @@ The Budget Calculator is a simple React web application that allows users to man
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/budget-calculator.git
-    cd budget-calculator
+    git clone https://github.com/HiteshSonetaNEU/Calculator
+    cd calculator
     ```
 
 2. Install dependencies:
