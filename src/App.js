@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Form from './components/Form';
+import List from './components/List';
+import PieChart from './components/PieChart';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [expenses, setExpenses] = useState([]);
+  const [showForm, setShowForm] = useState(false);
+
+  const addExpense = (expense) => {
+    setExpenses([...expenses, expense]);
+    setShowForm(false);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Budget Calculator</h1>
+      <div>
+        <button onClick={() => setShowForm(!showForm)}>
+          {showForm ? 'Show Expense List' : 'Add Expense'}
+        </button>
+      </div>
+      {showForm ? (
+        <div>
+          <Form addExpense={addExpense} />
+        </div>
+      ) : (
+        <div className="expense-section">
+          <List expenses={expenses} />
+          <div className="pie-chart-container">
+            <PieChart expenses={expenses} />
+          </div>
+        </div>
+      )}
     </div>
   );
-}
+};
 
 export default App;
